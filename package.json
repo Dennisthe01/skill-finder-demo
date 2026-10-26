@@ -7,7 +7,9 @@
     "skills:find": "node scripts/skill-search.mjs",
     "skills:find:all": "npx skills find",
     "skills:list": "npx skills list",
-    "skills:use": "npx skills use"
+    "skills:use": "npx skills use",
+    "skills:auto": "node scripts/auto-skill-search.mjs",
+    "skills:auto:best": "node scripts/auto-skill-search.mjs --best"
   },
   "engines": {
     "node": ">=22.20"

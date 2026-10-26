@@ -2,29 +2,28 @@
 
 This project demonstrates how to integrate the `vercel-labs/skills` CLI into a local project.
 
-## What's included
+## Automatic search workflow
 
-- `package.json` with scripts for searching skills
-- `scripts/skill-search.mjs` wrapper for `npx skills find`
-- quick examples for interactive and keyword-based skill discovery
-
-## Setup
-
-Make sure Node.js 22.20 or later is installed.
+You can now search for skills by plain-language query:
 
 ```bash
-npm install
+npm run skills:auto -- "android app reverse engineering"
+npm run skills:auto -- "security review"
+npm run skills:auto -- "typescript api architecture"
 ```
 
-Then run:
+This wrapper calls:
+
+```bash
+npx skills find "<your query>"
+```
+
+and prints the relevant skill matches for your task.
+
+## Search without interaction
 
 ```bash
 npm run skills:find -- typescript
-```
-
-or:
-
-```bash
 npm run skills:find:all
 ```
 
@@ -35,6 +34,20 @@ npx skills find
 npx skills find typescript
 npx skills add vercel-labs/agent-skills --list
 npx skills add vercel-labs/agent-skills --skill web-design-guidelines -a claude-code
+```
+
+## Best-match helper
+
+If you want a human-friendly workflow for likely candidates:
+
+```bash
+npm run skills:auto:best -- "android app reverse engineering"
+```
+
+This helps you identify the most relevant skill and then install it with a command like:
+
+```bash
+npx skills add <owner/repo> --skill <skill-name> -a claude-code
 ```
 
 ## Notes
