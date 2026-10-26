@@ -1,0 +1,15 @@
+{
+  "name": "skill-finder-demo",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Demo project that integrates the vercel-labs/skills CLI for searching and using agent skills.",
+  "scripts": {
+    "skills:find": "node scripts/skill-search.mjs",
+    "skills:find:all": "npx skills find",
+    "skills:list": "npx skills list",
+    "skills:use": "npx skills use"
+  },
+  "engines": {
+    "node": ">=22.20"
+  }
+}
